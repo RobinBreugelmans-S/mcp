@@ -131,11 +131,11 @@ server.tool("check_package_cves", "Check for known CVEs/vulnerabilities in npm p
             .map(formatVulnerability)
             .join("\n");
         const warningText = [
-            `⚠️  Found ${vulnCount} known vulnerabilit${vulnCount === 1 ? "y" : "ies"} for package "${packageName}"${version ? ` version ${version}` : ""}:`,
+            `⚠️ Found ${vulnCount} known vulnerabilit${vulnCount === 1 ? "y" : "ies"} for package "${packageName}"${version ? ` version ${version}` : ""}:`,
             "",
             formattedVulns,
             "",
-            "⚠️  WARNING: Consider using a different package or version without known vulnerabilities.",
+            "⚠️ WARNING: Consider using a different package or version without known vulnerabilities.",
         ].join("\n");
         return {
             content: [
@@ -201,7 +201,7 @@ server.tool("check_packages_bulk_cves", "Check multiple npm packages for CVEs at
             responseText += `✅ No known vulnerabilities found in any of the packages!`;
         }
         else {
-            responseText += `⚠️  Found vulnerabilities in ${packagesWithVulns.length} package(s) (${totalVulns} total vulnerabilities):\n\n`;
+            responseText += `⚠️ Found vulnerabilities in ${packagesWithVulns.length} package(s) (${totalVulns} total vulnerabilities):\n\n`;
             for (const result of packagesWithVulns) {
                 responseText += `\n📦 Package: ${result.package}${result.version ? ` (v${result.version})` : ""}\n`;
                 responseText += `   Vulnerabilities: ${result.vulnerabilityCount}\n\n`;
@@ -209,12 +209,12 @@ server.tool("check_packages_bulk_cves", "Check multiple npm packages for CVEs at
                     responseText += formatVulnerability(vuln) + "\n";
                 });
             }
-            responseText += `\n⚠️  WARNING: Consider reviewing these vulnerabilities before installation.`;
+            responseText += "\n⚠️ WARNING: Consider reviewing these vulnerabilities before installation.";
         }
         // Add summary of packages checked
         responseText += `\n\n📊 Summary:\n`;
         results.forEach((r) => {
-            const status = r.hasVulnerabilities ? "⚠️ " : "✅";
+            const status = r.hasVulnerabilities ? "⚠️" : "✅";
             const vulnInfo = r.hasVulnerabilities
                 ? ` (${r.vulnerabilityCount} vulnerabilities)`
                 : "";
