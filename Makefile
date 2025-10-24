@@ -1,0 +1,2 @@
+mcp:
+	zig build
