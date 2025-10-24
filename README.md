@@ -62,6 +62,23 @@ npm run build
 node build/index.js
 ```
 
+## Usage
+
+Add to .vscode/mcp.json to configure the MCP server in your development environment.
+
+```
+{
+	"servers": {
+		"cve-checker-mcp": {
+			"type": "stdio",
+			"command": "node",
+			"args": ["./build/index.js"]
+		}
+	},
+	"inputs": []
+}
+```
+
 ## Integration
 
 This MCP server can be integrated with any MCP-compatible client to provide CVE checking capabilities before installing npm packages.
