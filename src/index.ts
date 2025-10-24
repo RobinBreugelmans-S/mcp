@@ -490,13 +490,13 @@ server.tool(
           });
         }
 
-        responseText += `\n⚠️  WARNING: Consider reviewing these vulnerabilities before installation.`;
+        responseText += `\n⚠️ WARNING: Consider reviewing these vulnerabilities before installation.`;
       }
 
       // Add summary of packages checked
       responseText += `\n\n📊 Summary:\n`;
       results.forEach((r) => {
-        const status = r.hasVulnerabilities ? "⚠️ " : "✅";
+        const status = r.hasVulnerabilities ? "⚠️" : "✅";
         const vulnInfo = r.hasVulnerabilities
           ? ` (${r.vulnerabilityCount} vulnerabilities)`
           : "";
