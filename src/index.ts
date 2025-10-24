@@ -392,11 +392,11 @@ server.tool(
         .join("\n");
 
       const warningText = [
-        `⚠️  Found ${vulnCount} known vulnerabilit${vulnCount === 1 ? "y" : "ies"} for package "${packageName}"${version ? ` version ${version}` : ""}:`,
+        `⚠️ Found ${vulnCount} known vulnerabilit${vulnCount === 1 ? "y" : "ies"} for package "${packageName}"${version ? ` version ${version}` : ""}:`,
         "",
         formattedVulns,
         "",
-        "⚠️  WARNING: Consider using a different package or version without known vulnerabilities.",
+        "⚠️ WARNING: Consider using a different package or version without known vulnerabilities.",
       ].join("\n");
 
       return {
