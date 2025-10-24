@@ -1,12 +1,17 @@
 {
-  "name": "weather",
+  "name": "cve-checker",
   "version": "1.0.0",
-  "description": "",
+  "description": "MCP server with CVE checking for npm packages",
   "main": "index.js",
+  "type": "module",
+  "bin": {
+    "weather": "./build/index.js"
+  },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["mcp", "cve", "security", "npm", "vulnerabilities"],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -16,13 +21,6 @@
   "devDependencies": {
     "@types/node": "^24.9.1",
     "typescript": "^5.9.3"
-  },
-  "type": "module",
-  "bin": {
-    "weather": "./build/index.js"
-  },
-  "scripts": {
-    "build": "tsc && chmod 755 build/index.js"
   },
   "files": ["build"]
 }
