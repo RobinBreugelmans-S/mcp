@@ -477,7 +477,7 @@ server.tool(
       let responseText = `📦 Checked ${packages.length} package(s) for vulnerabilities:\n\n`;
 
       if (packagesWithVulns.length === 0) {
-        responseText += `✅ No known vulnerabilities found in any of the packages!`;
+        responseText += "✅ No known vulnerabilities found in any of the packages!";
       } else {
         responseText += `⚠️ Found vulnerabilities in ${packagesWithVulns.length} package(s) (${totalVulns} total vulnerabilities):\n\n`;
 
