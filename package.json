@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"bin": {
-		"weather": "./build/index.js"
+		"check_package_cves": "./build/index.js"
 	},
 	"scripts": {
 		"build": "tsc",
