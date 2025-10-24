@@ -15,19 +15,7 @@ const server = new McpServer({
 async function main() {
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.error("Weather MCP Server running on stdio");
-}
-// Format alert data
-function formatAlert(feature) {
-    const props = feature.properties;
-    return [
-        `Event: ${props.event || "Unknown"}`,
-        `Area: ${props.areaDesc || "Unknown"}`,
-        `Severity: ${props.severity || "Unknown"}`,
-        `Status: ${props.status || "Unknown"}`,
-        `Headline: ${props.headline || "No headline"}`,
-        "---",
-    ].join("\n");
+    console.error("CVE Checker MCP Server running on stdio");
 }
 // Helper function to check CVEs for a package
 async function checkPackageVulnerabilities(packageName, version) {
@@ -198,7 +186,7 @@ server.tool("check_packages_bulk_cves", "Check multiple npm packages for CVEs at
         const totalVulns = results.reduce((sum, r) => sum + r.vulnerabilityCount, 0);
         let responseText = `📦 Checked ${packages.length} package(s) for vulnerabilities:\n\n`;
         if (packagesWithVulns.length === 0) {
-            responseText += `✅ No known vulnerabilities found in any of the packages!`;
+            responseText += "✅ No known vulnerabilities found in any of the packages!";
         }
         else {
             responseText += `⚠️ Found vulnerabilities in ${packagesWithVulns.length} package(s) (${totalVulns} total vulnerabilities):\n\n`;
