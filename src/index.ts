@@ -490,7 +490,7 @@ server.tool(
           });
         }
 
-        responseText += `\n⚠️ WARNING: Consider reviewing these vulnerabilities before installation.`;
+        responseText += "\n⚠️ WARNING: Consider reviewing these vulnerabilities before installation.";
       }
 
       // Add summary of packages checked
