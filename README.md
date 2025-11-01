@@ -2,6 +2,10 @@
 
 This Model Context Protocol (MCP) server provides tools for checking Common Vulnerabilities and Exposures (CVEs) in npm packages before installation, along with weather information tools.
 
+<a href="https://glama.ai/mcp/servers/@RobinBreugelmans-S/mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@RobinBreugelmans-S/mcp/badge" alt="CVE Checker for Node Modules MCP server" />
+</a>
+
 ## Features
 
 ### CVE Checking Tools
